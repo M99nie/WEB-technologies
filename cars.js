@@ -6,7 +6,6 @@ const loadingElement = document.getElementById('loading');
 const messageElement = document.getElementById('message');
 const editModal = document.getElementById('editModal');
 
-
 // 1. ПОЛУЧЕНИЕ ВСЕХ АВТОМОБИЛЕЙ (GET)
 async function loadAllCars() {
     showLoading(true);
@@ -31,7 +30,6 @@ async function loadAllCars() {
         showLoading(false);
     }
 }
-
 
 // 2. ПОИСК ПО ID (GET)
 async function searchCar() {
@@ -68,7 +66,6 @@ async function searchCar() {
         showLoading(false);
     }
 }
-
 
 // 3. ДОБАВЛЕНИЕ АВТОМОБИЛЯ (POST)
 async function addNewCar() {
@@ -130,7 +127,6 @@ async function addNewCar() {
     }
 }
 
-// 4. ОТКРЫТИЕ ОКНА РЕДАКТИРОВАНИЯ
 function openEditModal(car) {
     document.getElementById('editId').value = car.id;
     document.getElementById('editFirm').value = car.firm;
@@ -143,7 +139,6 @@ function openEditModal(car) {
     editModal.style.display = 'flex';
 }
 
-// 5. СОХРАНЕНИЕ ИЗМЕНЕНИЙ (PUT)=
 async function saveCarChanges() {
     const carId = document.getElementById('editId').value;
     const updatedCar = {
@@ -254,7 +249,6 @@ function displayCars(cars) {
     `).join('');
 }
 
-
 function showLoading(show) {
     loadingElement.style.display = show ? 'block' : 'none';
     if (!show) {
@@ -299,7 +293,6 @@ document.addEventListener('keydown', function(event) {
         closeModal();
     }
 });
-
 
 // 9. ИНИЦИАЛИЗАЦИЯ ПРИ ЗАГРУЗКЕ СТРАНИЦЫ
 document.addEventListener('DOMContentLoaded', function() {
